@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoDL – Télécharge tes vidéos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Video<span>DL</span></h1>
+  <p class="sous-titre">Colle un lien, choisis le format, télécharge.</p>
+
+  <!-- Champ de lien -->
+  <div class="champ">
+    <input id="url" type="url" placeholder="Colle le lien de la vidéo ici…" autocomplete="off">
+    <button id="btn-analyser">Télécharger</button>
+  </div>
+
+  <!-- Icônes des plateformes -->
+  <div class="plateformes">
+    <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" title="YouTube">
+    <img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" title="TikTok">
+    <img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram" title="Instagram">
+    <img src="https://cdn.simpleicons.org/facebook/ffffff" alt="Facebook" title="Facebook">
+    <img src="https://cdn.simpleicons.org/x/ffffff" alt="X" title="X / Twitter">
+    <img src="https://cdn.simpleicons.org/reddit/ffffff" alt="Reddit" title="Reddit">
+    <img src="https://cdn.simpleicons.org/twitch/ffffff" alt="Twitch" title="Twitch">
+  </div>
+
+  <!-- États : chargement / erreur -->
+  <div id="chargement" class="cache"><div class="barre"><div class="barre-int indeterminee"></div></div><p>Analyse du lien…</p></div>
+  <div id="erreur" class="erreur cache"></div>
+
+  <!-- Aperçu + options -->
+  <section id="resultat" class="carte cache">
+    <img id="miniature" alt="">
+    <div class="infos">
+      <h2 id="titre"></h2>
+      <p id="meta" class="meta"></p>
+    </div>
+    <div class="options">
+      <div class="groupe" id="formats">
+        <button class="chip actif" data-format="mp4">MP4 (vidéo)</button>
+        <button class="chip" data-format="mp3">MP3 (audio)</button>
+      </div>
+      <div class="groupe" id="qualites">
+        <button class="chip" data-q="360">360p</button>
+        <button class="chip" data-q="720">720p</button>
+        <button class="chip" data-q="1080">1080p</button>
+        <button class="chip actif" data-q="best">Meilleure</button>
+      </div>
+    </div>
+    <button id="btn-dl" class="gros">Télécharger</button>
+    <div id="progression" class="cache">
+      <div class="barre"><div id="barre-dl" class="barre-int indeterminee"></div></div>
+      <p id="etat-dl">Préparation du fichier…</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h3>FAQ</h3>
+    <details><summary>Quelles plateformes sont supportées ?</summary><p>YouTube, TikTok, Instagram, Facebook, X/Twitter, Reddit, Twitch (clips), Vimeo et Dailymotion.</p></details>
+    <details><summary>Pourquoi ma vidéo ne marche pas ?</summary><p>Elle est peut-être privée, supprimée, réservée à certains pays, ou la plateforme bloque temporairement le serveur.</p></details>
+    <details><summary>Y a-t-il une limite ?</summary><p>Quelques demandes par minute et une durée maximale par vidéo, pour éviter les abus.</p></details>
+    <details><summary>Mes fichiers sont-ils conservés ?</summary><p>Non, ils sont supprimés du serveur juste après le téléchargement.</p></details>
+  </section>
+
+  <footer>⚠️ Ne télécharge que des contenus dont tu as les droits ou l'autorisation.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
